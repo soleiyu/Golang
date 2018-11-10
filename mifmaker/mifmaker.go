@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	writer(256, 256, "ipwm8b.mif")
+	writer(16, 16, "ipwm4b.mif")
 }
 
 func writer (width, depth int, fn string) {
