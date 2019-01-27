@@ -3,21 +3,30 @@ package main
 import (
 	"log"
 	"net/http"
-
 	"github.com/divan/gorilla-xmlrpc/xml"
 	"github.com/gorilla/rpc"
 )
 
-type TimeArgs struct{}
-
-type WordReply struct {
-	Word string
+type Reply struct {
+	Rep int
 }
 
-type TimeService struct{}
+type Args struct {
+	Vals []int
+}
 
-func (h *TimeService) Now(r *http.Request, args *TimeArgs, reply *WordReply) error {
-	reply.Word = "HOGE"
+type Funcs struct {}
+
+func (h *Funcs) GetSum(r *http.Request, args *Args, reply *Reply) error {
+
+	sum := 0
+
+	for _, val := range args.Vals {
+		sum += val
+	}
+
+	reply.Rep = sum
+
 	return nil
 }
 
@@ -25,13 +34,10 @@ func main() {
 	RPC := rpc.NewServer()
 	xmlrpcCodec := xml.NewCodec()
 	RPC.RegisterCodec(xmlrpcCodec, "text/xml")
-	RPC.RegisterService(new(TimeService), "")
+	RPC.RegisterService(new(Funcs), "")
 	http.Handle("/", RPC)
 
 	log.Println("Starting XML-RPC server on localhost:8000")
-	err := http.ListenAndServe(":8000", nil)
-	
-	if err != nil {
-		log.Fatal("ListenAndServer: ", err)
-	}
+	http.ListenAndServe(":8000", nil)
 }
+
