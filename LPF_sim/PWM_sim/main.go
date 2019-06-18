@@ -15,7 +15,6 @@ func main() {
 			fmt.Println (i, 0)
 		}
 	}
-
 }
 
 type Pwmc struct {
