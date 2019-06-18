@@ -20,14 +20,13 @@ func main() {
 			fmt.Println (i, 0)
 		}
 	}
-
 }
 
 type Pwmc struct {
 	bitWidth	int
-	Cnt				int
-	qc				int
-	Vmax			int
+	Cnt		int
+	qc		int
+	Vmax		int
 }
 
 func NewPwmc (bw int) *Pwmc {
@@ -53,4 +52,3 @@ func (ins *Pwmc) ClockUp (vq int) bool {
 
 	return qc
 }
-
