@@ -16,7 +16,7 @@ func main() {
 	fmt.Println("# ORTHANT :", orthant, err)
 
 	vcycle := 1000
-	vnum := 200
+	vnum := 50
 	val_inp := 0
 
 	for j := 0; j < vnum; j++ {
