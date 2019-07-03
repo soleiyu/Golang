@@ -12,7 +12,7 @@ import (
 // ./aydtool list 
 
 func main() {
-	fmt.Println("RE NAME TOOL v1.0")
+	fmt.Println("Auto Youtube-dl TOOL v1.0")
 	fmt.Println("List :", os.Args[1])
 
 	f, err := os.Open(os.Args[1])
