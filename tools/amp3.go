@@ -14,7 +14,6 @@ func main() {
 	fmt.Println("AUTO FFMPEG TO MP3 v1.0")
 	fmt.Println("Arg count : ", len(os.Args) - 1)
 
-
 	for i := 1; i < len(os.Args); i++ {
 		fmt.Println(os.Args[i])
 		fmt.Println(strconv.Itoa(i))
