@@ -17,7 +17,17 @@ func main(){
 
 //	ans := pictFunc.Xhsample(hogera)
 //	ans = pictFunc.X2sample(ans)
-	ans := pictFunc.KCol(hogera, 1, 4)
 
-	ans.Save("res.png")
+//	ans := pictFunc.KCol(hogera, 1, 4)
+
+//	a1 := pictFunc.Xhsample(hogera)
+//	a2 := pictFunc.X2sample(a1)
+
+//	ans.Save("res.png")
+
+	pictFunc.MifOutR(hogera, "pm4.mif")
+
+//	a1.Save("a1.png")
+//	a2.Save("a2.png")
+
 }
