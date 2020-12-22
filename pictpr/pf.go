@@ -23,9 +23,11 @@ func main(){
 //	a1 := pictFunc.Xhsample(hogera)
 //	a2 := pictFunc.X2sample(a1)
 
-//	ans.Save("res.png")
 
-	pictFunc.MifOutR(hogera, "pm4.mif")
+		ans := pictFunc.ClensR(hogera, 0.1)
+		ans.Save("res.png")
+
+//	pictFunc.MifOutR(hogera, "pm4.mif")
 
 //	a1.Save("a1.png")
 //	a2.Save("a2.png")
